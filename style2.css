@@ -80,3 +80,52 @@ h1 img {
   }
 
 
+  @media screen and (max-width: 430px) {
+    body {
+      padding: 20px;
+      align-items: flex-start;
+    }
+  
+    h1 img {
+      width: 280px;
+      height: auto;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 10px;
+    }
+  
+    .top-bar {
+      height: 60px;
+      width: 110%;
+      left: -10px;
+    }
+  
+    .pasta-title {
+      font-size: 1.3rem;
+      text-align: center;
+      margin-top: 80px;
+    }
+  
+    .pasta-photo {
+      width: 100%;
+      max-width: 330px;
+    }
+  
+    .ingredients-heading {
+      font-size: 1.1rem;
+      text-align: center;
+    }
+  
+    .ingredients-list {
+      font-size: 0.95rem;
+      padding-left: 10px;
+    }
+  
+    #homeBtn {
+      font-size: 1rem;
+      padding: 10px 20px;
+      display: block;
+      margin: 30px auto;
+    }
+  }
+  
