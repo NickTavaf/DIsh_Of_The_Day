@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dish of the day</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Pasta of the Day</title>
+    <link rel="stylesheet" href="style1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Dish </h1>
-    <div id="Dish Of the Day"></div>
+    <h1>
+        <img src="PastaOFtheday.png" alt="Pasta Of The Day">
+      </h1>
+      
+      <div class="top-bar"></div>
 
-    <button id="recipieBtn">Get Dish</button>
+    <h2><img src="FIND.png" alt="Find your Pasta"></h2>
+   
+    <button onclick="goToRecipe()">GET PASTA</button>
 
-    <div id="recipieSection"></div>
-    
-  
-
-
-    <i>Add style to make it look nice!</i>
-    
-    <script src="script.js"></script>
+    <script>
+        function goToRecipe() {
+            window.location.href = "recipe.html";
+        }
+    </script>
 </body>
 </html>
