@@ -35,11 +35,24 @@ document.addEventListener('DOMContentLoaded', function () {
         const recipieSection = document.getElementById('recipieSection');
         recipieSection.innerHTML = "";
 
+        // ✅ Add date banner first
+        const today = new Date();
+        const month = today.getMonth() + 1;
+        const day = today.getDate();
+        const year = today.getFullYear();
+        const dateString = `${month}/${day}/${year}`;
+
+        const banner = document.createElement('p');
+        banner.className = 'pasta-date';
+        banner.textContent = `Your pasta today on ${dateString}`;
+        recipieSection.appendChild(banner);
+
+        // ✅ Add recipe content
         const recipieItem = document.createElement('div');
         const recipieIngredients = data.extendedIngredients;
 
         let formattedIngredients = recipieIngredients.map(ingredient => `<li>${ingredient.original}</li>`).join("");
-//styling 
+
         recipieItem.innerHTML = `
             <h2 class="pasta-title">${data.title}</h2>
             <img class="pasta-photo" src='${data.image}' alt='recipe image' />

@@ -39,7 +39,7 @@ h1 img {
   }
   .pasta-photo {
     /* display: block; */
-    margin: 30px auto 0 auto;
+    margin: 10px auto 0 auto; 
     width: 400px;
     /* border-radius: 8px; */
 
@@ -59,16 +59,29 @@ h1 img {
     color: #fff;
   }
 
- p {
+  p {
     margin-top: 50px;
     text-align: center;
     color: rgba(255, 255, 255, 0.5);
     font-size: 0.9rem;
     width: 100%;
-    max-width: 800px;
-    padding: 20px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
 }
+.pasta-date {
+    position: absolute;
+    right: 20px;
+    top: 130px;
+    font-family: 'Didot', serif;      /* Font style */
+    font-size: 1.2rem;                /* Text size */
+    color: #FFD700;                   /* Gold-like color */
+    text-align: center;              /* Centered on page */
+              /* Space above and below */
+    letter-spacing: 1px;             /* Slight spacing between letters */
+    text-transform: uppercase;       /* Makes it all caps (optional) */
+    font-weight: bold;   
+    margin: 0;                /* Make it stand out more */
+  }
+  
 
   button {
     background-color: #D4AF37;;
