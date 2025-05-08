@@ -140,7 +140,9 @@ button:hover::after {
     }
     h3 {
         top: 200px;
-        left: 5px;
+        left: 15px;
+        font-size: 9px;
+
         
     }
   
