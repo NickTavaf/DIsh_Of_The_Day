@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    /* @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700&display=swap'); */
+    
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #272626;
+      font-family: 'Didot', serif; /* Closest web-safe alternative to Didot */
+    }
+    
+    .container {
+      position: relative;
+      width: 320px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .title-container {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 30px;
+      position: relative;
+      height: 50px;
+    }
+    
+    .title {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #e9e9e9;
+      animation: text-fade 1.8s infinite; /* Faster animation */
+      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+    
+    .animation-container {
+      position: relative;
+      width: 320px;
+      height: 320px;
+      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+    }
+    
+    .pot {
+      position: absolute;
+      width: 220px;
+      height: 140px;
+      background: linear-gradient(to bottom, #888, #666);
+      border-radius: 0 0 110px 110px;
+      bottom: 20px;
+      left: 50px;
+      overflow: hidden;
+      border-top: 2px solid #999;
+    }
+    
+    .pot-handles {
+      position: absolute;
+      width: 260px;
+      height: 140px;
+      bottom: 20px;
+      left: 30px;
+    }
+    
+    .handle-left, .handle-right {
+      position: absolute;
+      width: 20px;
+      height: 50px;
+      background: linear-gradient(to right, #555, #666);
+      border-radius: 10px;
+      top: 20px;
+      box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+    }
+    
+    .handle-left {
+      left: 0;
+      transform: rotate(-20deg);
+    }
+    
+    .handle-right {
+      right: 0;
+      transform: rotate(20deg);
+    }
+    
+    .pot-lid {
+      position: absolute;
+      width: 240px;
+      height: 30px;
+      background: linear-gradient(to bottom, #aaa, #888);
+      border-radius: 50% 50% 0 0;
+      bottom: 160px;
+      left: 40px;
+      transform-origin: center bottom;
+      animation: lid-shake 2s infinite;
+      box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .lid-handle {
+      position: absolute;
+      width: 30px;
+      height: 15px;
+      background: linear-gradient(to bottom, #777, #666);
+      border-radius: 15px 15px 0 0;
+      top: -10px;
+      left: 105px;
+    }
+    
+    .water {
+      position: absolute;
+      width: 220px;
+      height: 80px;
+      background: linear-gradient(to bottom, #6cb9e8, #4a9ac7);
+      bottom: 0;
+      left: 0;
+      animation: water-boil 0.5s infinite;
+    }
+    
+    .bubble {
+      position: absolute;
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 50%;
+      animation: bubble-rise 2s infinite;
+      box-shadow: inset 0 0 3px rgba(255,255,255,0.5);
+    }
+    
+    .pasta {
+      position: absolute;
+      background-color: #f5deb3;
+      border-radius: 2px;
+      box-shadow: 0 0 2px rgba(0,0,0,0.1);
+    }
+    
+    .steam {
+      position: absolute;
+      width: 10px;
+      height: 20px;
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 10px;
+      filter: blur(1px);
+      animation: steam-rise 3s infinite;
+    }
+    
+    .stove {
+      position: absolute;
+      width: 280px;
+      height: 20px;
+      background: linear-gradient(to bottom, #444, #333);
+      bottom: 0;
+      left: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    .stove::after {
+      content: '';
+      position: absolute;
+      width: 30px;
+      height: 8px;
+      background-color: #555;
+      right: 20px;
+      top: 6px;
+      border-radius: 4px;
+    }
+    
+    @keyframes water-boil {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-2px); }
+      100% { transform: translateY(0); }
+    }
+    
+    @keyframes bubble-rise {
+      0% { transform: translateY(0); opacity: 0; }
+      20% { opacity: 0.8; }
+      100% { transform: translateY(-70px); opacity: 0; }
+    }
+    
+    @keyframes steam-rise {
+      0% { transform: translateY(0) scale(0.8); opacity: 0; }
+      20% { opacity: 0.7; }
+      100% { transform: translateY(-100px) scale(1.2); opacity: 0; }
+    }
+    
+    @keyframes lid-shake {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(-0.8deg); }
+      75% { transform: rotate(0.8deg); }
+    }
+    
+    @keyframes text-fade {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title-container">
+      <div class="title">Finding Your Pasta</div>
+    </div>
+    <div class="animation-container">
+      <div class="stove"></div>
+      <div class="pot-handles">
+        <div class="handle-left"></div>
+        <div class="handle-right"></div>
+      </div>
+      <div class="pot">
+        <div class="water" id="water"></div>
+      </div>
+      <div class="pot-lid">
+        <div class="lid-handle"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Get elements
+    const water = document.getElementById('water');
+    const pot = document.querySelector('.pot');
+    
+    // Create bubbles
+    function createBubbles() {
+      for (let i = 0; i < 12; i++) {
+        setTimeout(() => {
+          const bubble = document.createElement('div');
+          bubble.className = 'bubble';
+          bubble.style.width = Math.random() * 12 + 5 + 'px';
+          bubble.style.height = bubble.style.width;
+          bubble.style.left = Math.random() * 200 + 10 + 'px';
+          bubble.style.bottom = Math.random() * 20 + 'px';
+          bubble.style.animationDelay = Math.random() * 2 + 's';
+          water.appendChild(bubble);
+          
+          // Remove bubble after animation
+          setTimeout(() => {
+            if (water.contains(bubble)) {
+              water.removeChild(bubble);
+            }
+          }, 2000);
+        }, i * 250);
+      }
+    }
+    
+    // Create steam
+    function createSteam() {
+      for (let i = 0; i < 6; i++) {
+        setTimeout(() => {
+          const steam = document.createElement('div');
+          steam.className = 'steam';
+          steam.style.left = Math.random() * 200 + 10 + 'px';
+          steam.style.bottom = '160px';
+          steam.style.animationDelay = Math.random() * 1 + 's';
+          document.querySelector('.animation-container').appendChild(steam);
+          
+          // Remove steam after animation
+          setTimeout(() => {
+            if (document.querySelector('.animation-container').contains(steam)) {
+              document.querySelector('.animation-container').removeChild(steam);
+            }
+          }, 3000);
+        }, i * 500);
+      }
+    }
+    
+    // Create pasta
+    function addPasta() {
+      for (let i = 0; i < 22; i++) {
+        const pasta = document.createElement('div');
+        pasta.className = 'pasta';
+        pasta.style.width = '3px';
+        pasta.style.height = Math.random() * 20 + 30 + 'px';
+        pasta.style.left = Math.random() * 180 + 20 + 'px';
+        pasta.style.bottom = Math.random() * 40 + 20 + 'px';
+        pasta.style.transform = `rotate(${Math.random() * 360}deg)`;
+        water.appendChild(pasta);
+      }
+    }
+    
+    // Start animations
+    function startAnimations() {
+      setInterval(createBubbles, 2500);
+      setInterval(createSteam, 2500);
+    }
+    
+    // Initialize
+    startAnimations();
+    createBubbles();
+    createSteam();
+    addPasta(); // Add pasta automatically at start
+
+    setTimeout(() => {
+  window.location.href = "recipe.html";
+}, 2500); // 3 seconds
+  </script>
+</body>
+</html>
